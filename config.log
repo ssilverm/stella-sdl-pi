@@ -1,0 +1,25 @@
+Configure run on Thu Feb 19 12:15:32 UTC 2015
+
+int main(void) {
+	#ifndef __GNUC__
+	syntax error
+	#endif
+	return 0;
+}
+
+g++ ./stella-conf.cxx  -o ./stella-conf -c
+
+
+#include <stdio.h>
+#include <png.h>
+int main(void) { return printf("%s\n", PNG_HEADER_VERSION_STRING); }
+
+g++ ./stella-conf.cxx  -o ./stella-conf -lpng
+
+
+#include <string.h>
+#include <zlib.h>
+int main(void) { return strcmp(ZLIB_VERSION, zlibVersion()); }
+
+g++ ./stella-conf.cxx  -o ./stella-conf -lz
+
